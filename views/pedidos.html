@@ -1,0 +1,159 @@
+<section class="page-section" id="contacto">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-xl-9 mx-auto">
+                <div class="bg-faded rounded p-5 shadow-sm text-center">
+
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper">¿Buscas un manga?</span>
+                        <span class="section-heading-lower">Haz tu pedido o contáctanos</span>
+                    </h2>
+
+                    <form action="views/server.html" method="get" class="needs-validation">
+
+                        <div class="mb-3 text-start">
+                            <label for="nombre" class="form-label">Nombre completo</label>
+                            <input type="text" class="form-control" id="nombre" name="nombre"
+                                placeholder="Ej. Stalyn Landazuri" required minlength="3" maxlength="60">
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label for="correo" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="correo" name="correo"
+                                placeholder="tucorreo@ejemplo.com" required maxlength="80">
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label for="telefono" class="form-label">Teléfono o WhatsApp</label>
+                            <input type="tel" class="form-control" id="telefono" name="telefono"
+                                placeholder="+593 99 123 4567" pattern="^\+?\d[\d\s\-]{7,16}$" maxlength="18" required>
+                        </div>
+
+                        <div class="mb-3 text-start">
+                            <label for="password" class="form-label">Contraseña (crear cuenta)</label>
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="Mínimo 6 caracteres" minlength="6" maxlength="32" required>
+                        </div>
+
+                        <div class="row g-3">
+                            <div class="col-md-6 text-start">
+                                <label for="genero" class="form-label">Género de manga</label>
+                                <select id="genero" name="genero" class="form-select" required>
+                                    <option value="" selected disabled>Selecciona...</option>
+                                    <option>Shōnen</option>
+                                    <option>Shōjo</option>
+                                    <option>Seinen</option>
+                                    <option>Josei</option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-6 text-start">
+                                <label for="cantidad" class="form-label">Cantidad de tomos</label>
+                                <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" max="50"
+                                    step="1" value="1" required>
+                            </div>
+                        </div>
+
+                        <div class="row g-3 mt-3">
+                            <div class="col-md-8 text-start">
+                                <label for="titulo" class="form-label">Título del manga</label>
+                                <input type="text" id="titulo" name="titulo" class="form-control"
+                                    placeholder="Ej. Vinland Saga" maxlength="100" required>
+                            </div>
+
+                            <div class="col-md-4 text-start">
+                                <label for="tomo" class="form-label">N.º de tomo</label>
+                                <input type="number" id="tomo" name="tomo" class="form-control" min="1" max="200"
+                                    placeholder="Ej. 7">
+                            </div>
+                        </div>
+
+                        <div class="mb-3 mt-4 text-start">
+                            <label for="mensaje" class="form-label">Mensaje o solicitud adicional</label>
+                            <textarea id="mensaje" name="mensaje" class="form-control" rows="4"
+                                placeholder="Indica si buscas una edición especial o estado específico del manga"
+                                maxlength="400"></textarea>
+                        </div>
+
+                        <div class="form-check mb-4 text-start">
+                            <input class="form-check-input" type="checkbox" value="1" id="acepto" required>
+                            <label class="form-check-label" for="acepto">
+                                Acepto ser contactado por correo o WhatsApp para confirmar mi pedido.
+                            </label>
+                        </div>
+
+                        <div class="mt-5">
+                            <h3 class="mb-3 text-center fw-bold">Tarifas de envío</h3>
+
+                            <table class="table table-borderless text-center mx-auto" style="max-width: 500px;">
+                                <thead class="fw-semibold border-bottom">
+                                    <tr>
+                                        <th>Destino</th>
+                                        <th>Tiempo</th>
+                                        <th>Costo</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Quito</td>
+                                        <td>1–2 días</td>
+                                        <td>$2.00</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Guayaquil</td>
+                                        <td>2–3 días</td>
+                                        <td>$2.50</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Otras provincias</td>
+                                        <td>3–5 días</td>
+                                        <td>$3.00</td>
+                                    </tr>
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <td colspan="3" class="text-muted small pt-3">
+                                            Los precios pueden variar según la cantidad o la ubicación del
+                                            envío.
+                                        </td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+
+                        <div class="d-flex justify-content-center gap-2 mb-4">
+                            <button type="submit" class="btn btn-primary">Enviar solicitud</button>
+                            <button type="reset" class="btn btn-outline-secondary">Limpiar</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div class="text-center mt-3">
+    <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#modalPoliticas">
+        Política de devoluciones
+    </button>
+</div>
+
+<div class="modal fade" id="modalPoliticas" tabindex="-1" aria-labelledby="modalPoliticasLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="modalPoliticasLabel">Política de Devoluciones</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                Tienes 7 días hábiles desde la entrega para solicitar cambio si el producto llega dañado
+                o no coincide con el pedido. Aplica con número de orden y fotos del empaque.
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
